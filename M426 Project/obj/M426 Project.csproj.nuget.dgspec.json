@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\weissc14\\source\\repos\\M426 Project\\M426 Project\\M426 Project.csproj": {}
+    "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\M426 Project\\M426 Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\weissc14\\source\\repos\\M426 Project\\M426 Project\\M426 Project.csproj": {
+    "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\M426 Project\\M426 Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\weissc14\\source\\repos\\M426 Project\\M426 Project\\M426 Project.csproj",
+        "projectUniqueName": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\M426 Project\\M426 Project.csproj",
         "projectName": "M426 Project",
-        "projectPath": "C:\\Users\\weissc14\\source\\repos\\M426 Project\\M426 Project\\M426 Project.csproj",
+        "projectPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\M426 Project\\M426 Project.csproj",
         "packagesPath": "C:\\Users\\weissc14\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\weissc14\\source\\repos\\M426 Project\\M426 Project\\obj\\",
+        "outputPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\M426 Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
