@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{787D500D-8D43-428D-B114-75B77DC27C92}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="M426_Projekt_Core/Controllers/CreateListController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="M426_Projekt_Core/Controllers/ListController.cs">
     <Files>
       <File FileName="M426_Projekt_Core/Views/List/Index.cshtml" Line="8" Column="21" />
-      <File FileName="M426_Projekt_Core/Controllers/ListController.cs" />
-      <File FileName="M426_Projekt_Core/Controllers/CreateListController.cs" Line="9" Column="1" />
+      <File FileName="M426_Projekt_Core/Controllers/ListController.cs" Line="13" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +10,7 @@
           <Node name="M426_Projekt_Core" expanded="True">
             <Node name="M426_Projekt_Core" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="CreateListController.cs" selected="True" />
+                <Node name="ListController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
