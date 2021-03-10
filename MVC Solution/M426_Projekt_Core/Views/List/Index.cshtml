@@ -3,7 +3,7 @@
     @foreach (M426_Projekt_Core.Models.List.ListModel list in Model)
     {
         <div class="ListItem">
-            <p>@Html.DisplayFor(modelItem => list.name)</p>
+            <p href='@Url.Action("Index", "ListDetails")'>@Html.DisplayFor(modelItem => list.name)</p>
         </div>
     }
 </div>
