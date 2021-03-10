@@ -5661,11 +5661,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ardiandemiri/Desktop/M426_Proj/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
+      "projectUniqueName": "/Users/ardiandemiri/Desktop/Projects/Programming/C#/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
       "projectName": "M426_Projekt_Core",
-      "projectPath": "/Users/ardiandemiri/Desktop/M426_Proj/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
+      "projectPath": "/Users/ardiandemiri/Desktop/Projects/Programming/C#/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
       "packagesPath": "/Users/ardiandemiri/.nuget/packages/",
-      "outputPath": "/Users/ardiandemiri/Desktop/M426_Proj/M426_Projekt/MVC Solution/M426_Projekt_Core/obj/",
+      "outputPath": "/Users/ardiandemiri/Desktop/Projects/Programming/C#/M426_Projekt/MVC Solution/M426_Projekt_Core/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

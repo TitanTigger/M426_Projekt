@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2URqFXBJPb4bW0XW8U3EsPkHF1mDFJyj/yjKvr1M8/NMcrann+smiv1FlX8scQ/2Efxp1Gi20EKGjW0BDwfn9Q==",
+  "dgSpecHash": "pDaHsItwuyIXkRQmcy0Pq2RNAVVByZ1T/2tH2aMIIYKn+Z+zgKZ+6zfM1rKDuHuwJLsLUp+l+2XK+lYPfd7HZg==",
   "success": true,
-  "projectFilePath": "/Users/ardiandemiri/Desktop/M426_Proj/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
+  "projectFilePath": "/Users/ardiandemiri/Desktop/Projects/Programming/C#/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
   "expectedPackageFiles": [
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/ardiandemiri/.nuget/packages/microsoft.data.sqlclient/2.0.1/microsoft.data.sqlclient.2.0.1.nupkg.sha512",
