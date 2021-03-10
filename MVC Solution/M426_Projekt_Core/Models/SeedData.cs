@@ -22,14 +22,6 @@ namespace M426_Projekt_Core.Models
                     return; // DB has been seeded
                 }
 
-                context.User.AddRange(
-                    new UserModel()
-                    {
-                        Email = "cedric.weiss@bluewin.ch",
-                        Password = "Test",
-                        Nickname = "weissc14"
-                    }
-                );
                 context.SaveChanges();
             }
         }
