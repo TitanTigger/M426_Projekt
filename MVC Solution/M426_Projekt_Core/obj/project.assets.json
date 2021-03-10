@@ -8,30 +8,28 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\weissc14\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/ardiandemiri/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\M426_Projekt_Core.csproj",
+      "projectUniqueName": "/Users/ardiandemiri/Desktop/M426_Proj/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
       "projectName": "M426_Projekt_Core",
-      "projectPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\M426_Projekt_Core.csproj",
-      "packagesPath": "C:\\Users\\weissc14\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\obj\\",
+      "projectPath": "/Users/ardiandemiri/Desktop/M426_Proj/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
+      "packagesPath": "/Users/ardiandemiri/.nuget/packages/",
+      "outputPath": "/Users/ardiandemiri/Desktop/M426_Proj/M426_Projekt/MVC Solution/M426_Projekt_Core/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\weissc14\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/ardiandemiri/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -67,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
       }
     }
   }
