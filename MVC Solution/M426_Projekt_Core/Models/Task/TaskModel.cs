@@ -1,6 +1,6 @@
-﻿using M426_Project.Models.Priority;
-using M426_Project.Models.Status;
-using M426_Project.Models.User;
+﻿using M426_Projekt_Core.Models.Priority;
+using M426_Projekt_Core.Models.Status;
+using M426_Projekt_Core.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace M426_Projekt_Core.Models.Task
     {
         public int Id { get; set; }
         public virtual StatusModel Status { get; set; }
-        public virtual UserModel User { get; set }
+        public virtual UserModel User { get; set; }
         public virtual PriorityModel Priority { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

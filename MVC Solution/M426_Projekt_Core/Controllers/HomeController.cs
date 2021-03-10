@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using M426_Projekt_Core.Models.User;
 
 namespace M426_Projekt_Core.Controllers
 {
@@ -13,13 +14,16 @@ namespace M426_Projekt_Core.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ToDoContext _context;
+
+        public HomeController(ToDoContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            List<UserModel> test = _context.User.Where(u => u.Email == "cedric.weiss@bluewin.ch").ToList();
             return View();
         }
 
