@@ -20,8 +20,21 @@ namespace M426_Projekt_Core.Controllers
 
         public IActionResult Index()
         {
+            // Alle Listen anzeigen
             return View();
         }
+
+        // Create a new List
+        public IActionResult CreateList()
+        {
+            //Datenbankobjekt instanzieren
+
+            //Daten bearbeiten / Logik mit abfragen
+
+            //Daten weitergeben aus dem Model
+            return View();
+        }
+
 
         public IActionResult Privacy()
         {
