@@ -54,7 +54,6 @@ C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\D
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\M426_Projekt_Core.TagHelpers.input.cache
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\M426_Projekt_Core.TagHelpers.output.cache
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\M426_Projekt_Core.RazorCoreGenerate.cache
-C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\Razor\Controllers\Index.cshtml.g.cs
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\Razor\Views\List\Index.cshtml.g.cs
