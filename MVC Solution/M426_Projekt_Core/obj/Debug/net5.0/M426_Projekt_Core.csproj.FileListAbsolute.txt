@@ -71,3 +71,4 @@ C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\D
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\ref\M426_Projekt_Core.dll
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\M426_Projekt_Core.pdb
 C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\M426_Projekt_Core.genruntimeconfig.cache
+C:\Users\weissc14\source\repos\M426_Projekt\MVC Solution\M426_Projekt_Core\obj\Debug\net5.0\Razor\Views\List\ListDetails.cshtml.g.cs
