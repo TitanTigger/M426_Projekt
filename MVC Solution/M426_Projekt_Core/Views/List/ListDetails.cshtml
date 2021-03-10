@@ -3,8 +3,7 @@
     @foreach (M426_Projekt_Core.Models.Task.TaskModel task in Model)
     {
         <div class="ListItem">
-            <p>@Html.DisplayFor(modelItem => task.name)</p>
-
+            <p>@Html.DisplayFor(modelItem => task.Title)</p>
         </div>
     }
 </div>
