@@ -1,10 +1,10 @@
-﻿using M426_Project.Models.List;
-using M426_Project.Models.Role;
-using M426_Project.Models.User;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using M426_Projekt_Core.Models.List;
+using M426_Projekt_Core.Models.Role;
+using M426_Projekt_Core.Models.User;
 
 namespace M426_Projekt_Core.Models.Share
 {

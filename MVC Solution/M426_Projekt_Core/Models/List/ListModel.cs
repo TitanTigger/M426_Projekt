@@ -7,7 +7,7 @@ namespace M426_Projekt_Core.Models.List
 {
     public class ListModel
     {
-        public int Id { get; set; };
+        public int Id { get; set; }
         public string  name { get; set; }
     }
 }
