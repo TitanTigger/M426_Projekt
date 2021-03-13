@@ -30,12 +30,12 @@ namespace M426_Projekt_Core.Models
         }
 
         //Entities
-        public System.Data.Entity.DbSet<ListModel> List { get; set; }
-        public System.Data.Entity.DbSet<PriorityModel> Priority { get; set; }
-        public System.Data.Entity.DbSet<RoleModel> Role { get; set; }
-        public System.Data.Entity.DbSet<ShareModel> Share { get; set; }
-        public System.Data.Entity.DbSet<StatusModel> Status { get; set; }
-        public System.Data.Entity.DbSet<TaskModel> Task { get; set; }
-        public System.Data.Entity.DbSet<UserModel> User { get; set; }
+        public DbSet<ListModel> List { get; set; }
+        public DbSet<PriorityModel> Priority { get; set; }
+        public DbSet<RoleModel> Role { get; set; }
+        public DbSet<ShareModel> Share { get; set; }
+        public DbSet<StatusModel> Status { get; set; }
+        public DbSet<TaskModel> Task { get; set; }
+        public DbSet<UserModel> User { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace M426_Projekt_Core.Controllers
 
         public IActionResult Index()
         {
-            List<UserModel> test = _context.User.Where(u => u.Email == "cedric.weiss@bluewin.ch").ToList();
+            //List<UserModel> test = _context.User.Where(u => u.Email == "cedric.weiss@bluewin.ch").ToList();
             return View();
         }
 
