@@ -2348,12 +2348,11 @@
       ]
     },
     "System.Collections.NonGeneric/4.3.0": {
-      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
+      "sha512": "LE/oChpRvkSi3U25u0KnJcI44JeDZ1QJCyN4qFDx2uusEypdqR24w7lKYw21eYe5esuCBuc862wRmpF63Yy1KQ==",
       "type": "package",
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4593,12 +4592,11 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
-      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
+      "sha512": "2Z5t70a2SwMsfQDp9KOclaZNyQhfIga2gppq9lIUDM1A4ohTshn4JqT7ir8bvIhXgorWKYDAr6rPzEbi/nTGKg==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5657,26 +5655,48 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maxbr\\.nuget\\packages\\": {}
+<<<<<<< HEAD
+    "C:\\Users\\weissc14\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+    "/Users/ardiandemiri/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+>>>>>>> da7cce22c2f1cedc4bc7c28e6a782a6733b8ff90
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\M426_Projekt_Core.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\M426_Projekt_Core.csproj",
       "projectName": "M426_Projekt_Core",
-      "projectPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\M426_Projekt_Core.csproj",
-      "packagesPath": "C:\\Users\\maxbr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\obj\\",
+      "projectPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\M426_Projekt_Core.csproj",
+      "packagesPath": "C:\\Users\\weissc14\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_Core\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\maxbr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\weissc14\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "/Users/ardiandemiri/Desktop/Projects/Programming/C#/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
+      "projectName": "M426_Projekt_Core",
+      "projectPath": "/Users/ardiandemiri/Desktop/Projects/Programming/C#/M426_Projekt/MVC Solution/M426_Projekt_Core/M426_Projekt_Core.csproj",
+      "packagesPath": "/Users/ardiandemiri/.nuget/packages/",
+      "outputPath": "/Users/ardiandemiri/Desktop/Projects/Programming/C#/M426_Projekt/MVC Solution/M426_Projekt_Core/obj/",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "/Users/ardiandemiri/.config/NuGet/NuGet.Config"
+>>>>>>> da7cce22c2f1cedc4bc7c28e6a782a6733b8ff90
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5722,7 +5742,11 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+>>>>>>> da7cce22c2f1cedc4bc7c28e6a782a6733b8ff90
       }
     }
   }

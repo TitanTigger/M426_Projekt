@@ -1,6 +1,7 @@
-﻿<h1>My Lists</h1>
+﻿@using M426_Projekt_Core.Models.Task
+<h1>My Lists</h1>
 <div class="List">
-    @foreach (M426_Projekt_Core.Models.Task.TaskModel task in Model)
+    @foreach (TaskModel task in Model)
     {
         <div class="ListItem">
             <p>@Html.DisplayFor(modelItem => task.Title)</p>

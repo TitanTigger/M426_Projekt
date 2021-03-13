@@ -12,6 +12,7 @@ namespace M426_Projekt_Core.Controllers
 {
     public class ListController : Controller
     {
+        List<ListViewModel> model = new List<ListViewModel>();
         private readonly ILogger<ListController> _logger;
 
         public ListController(ILogger<ListController> logger)
@@ -21,8 +22,8 @@ namespace M426_Projekt_Core.Controllers
 
         public IActionResult Index()
         {
+            model = null;
             //Datenbankobjekt instanzieren
-            List<ListViewModel> model = new List<ListViewModel>();
             ListViewModel obj = new ListViewModel();
             obj.ID = 1;
             obj.Name = "M426";
@@ -43,6 +44,26 @@ namespace M426_Projekt_Core.Controllers
             //Daten bearbeiten / Logik mit abfragen
 
             //Daten weitergeben aus dem Model
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            //Datenbankobjekt holen
+            List<ListViewModel> objs = new List<ListViewModel>();
+            objs = model.Where(n => n.ID != id).ToList();
+            //Daten weitergeben aus dem Model
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Create(string name, int id)
+        {
+            ListViewModel obj = new ListViewModel();
+            obj.ID = id;
+            obj.Name = name;
+            model.Add(obj);
             return View(model);
         }
 
