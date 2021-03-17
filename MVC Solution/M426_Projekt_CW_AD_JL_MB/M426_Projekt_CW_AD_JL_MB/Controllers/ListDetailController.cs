@@ -27,13 +27,23 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
 
         public IActionResult Index(int id = 1)
         {
+            ListDetailViewModel listDetail = new ListDetailViewModel();
+            List<IdentityUser> users = _context.Users.Where(n => n.Id != null).ToList();
+            listDetail.Users = users;
+            List<TaskModel> tasks = new List<TaskModel>();
+            foreach (TaskModel task in tasks)
+            {
+                task.User = _context.Users.Where(n => n.Id == task.UserId).FirstOrDefault();
+            }
+            listDetail.Tasks = tasks;
+
             // User überprüfen nach Berechtigung in der Share Tabelle
 
             // Alle Tasks verknüpft mit dieser Liste holen
-            List<TaskModel> tasks = new List<TaskModel>();
+            
             List<PriorityModel> priority = new List<PriorityModel>();
             List<StatusModel> status = new List<StatusModel>();
-            ListDetailViewModel listDetail = new ListDetailViewModel();
+            
             tasks = _context.Task.Where(n => n.ListId == id).ToList();
             priority = _context.Priority.ToList();
             status = _context.Status.ToList();
@@ -43,6 +53,17 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             listDetail.Status = status;
             listDetail.ListId = id;
             return View(listDetail);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateTask(int id, string userId)
+        {
+            TaskModel task = _context.Task.Where(n => n.Id == id).First();
+            IdentityUser user = _context.Users.Where(n => n.Id == userId).First();
+            task.User = user;
+            _context.Task.Update(task);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
