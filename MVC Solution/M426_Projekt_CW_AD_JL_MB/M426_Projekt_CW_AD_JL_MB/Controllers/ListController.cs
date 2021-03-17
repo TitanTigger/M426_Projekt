@@ -41,6 +41,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
         public IActionResult Delete(int id)
         {
             _context.Share.RemoveRange(_context.Share.Where(s => s.ListId == id));
+            _context.Task.RemoveRange(_context.Task.Where(t => t.ListId == id));
             _context.SaveChanges();
             ListModel list = _context.List.Find(id);
             _context.List.Remove(list);

@@ -92,6 +92,27 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             return RedirectToAction("Index", new { id = listId });
         }
 
+        [HttpPost]
+        public IActionResult Share(int id, string username)
+        {
+            ShareModel Share = new ShareModel();
+            IdentityUser shareUser = new IdentityUser();
+            shareUser = _context.Users.Where(u => u.UserName == username).FirstOrDefault();
+            if (shareUser != null)
+            {
+                if ((_context.Share.Where(s => s.UserId == shareUser.Id && s.ListId == id).FirstOrDefault()) == null)
+                {
+                    Share.UserId = shareUser.Id;
+                    Share.ListId = id;
+                    _context.Share.Add(Share);
+                    _context.SaveChanges();
+                }
+            }
+
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Privacy()
         {
             return View();
