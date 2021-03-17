@@ -6096,19 +6096,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maxbr\\.nuget\\packages\\": {}
+    "C:\\Users\\weissc14\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
+      "projectUniqueName": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
       "projectName": "M426_Projekt_CW_AD_JL_MB",
-      "projectPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
-      "packagesPath": "C:\\Users\\maxbr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\obj\\",
+      "projectPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
+      "packagesPath": "C:\\Users\\weissc14\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\maxbr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\weissc14\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6173,7 +6177,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

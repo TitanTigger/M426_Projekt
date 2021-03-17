@@ -124,3 +124,52 @@
         </div>
     </div>
 </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createModal">Create new task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        @using (Html.BeginForm("Create", "ListDetail", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            <div class="form-group">
+                                <div>
+                                    <input class="span2 col-md-2 form-control" id="format" name="listId" type="hidden" value="@Model.ListId" required>
+                                    Title: <input class="span2 col-md-2 form-control" id="format" name="title" type="text" required>
+                                    <br />
+                                    Description: <input class="span2 col-md-2 form-control" id="format" name="description" type="text" required>
+                                    <br />
+                                    <div class="form-group">
+                                        <select class="form-control" name="statusId">
+                                            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Status.StatusModel obj in Model.Status)
+                                            {
+                                                <option value="@obj.Id">@obj.name</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <select class="form-control" name="priorityId">
+                                            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Priority.PriorityModel obj in Model.Priority)
+                                            {
+                                                <option value="@obj.Id">@obj.name</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <br />
+
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

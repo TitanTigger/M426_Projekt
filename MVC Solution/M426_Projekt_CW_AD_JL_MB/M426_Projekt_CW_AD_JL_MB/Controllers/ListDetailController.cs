@@ -12,6 +12,8 @@ using M426_Projekt_CW_AD_JL_MB.Data;
 using Microsoft.AspNetCore.Identity;
 using M426_Projekt_CW_AD_JL_MB.Models.Share;
 using M426_Projekt_CW_AD_JL_MB.Models.Task;
+using M426_Projekt_CW_AD_JL_MB.Models.Status;
+using M426_Projekt_CW_AD_JL_MB.Models.Priority;
 
 namespace M426_Projekt_CW_AD_JL_MB.Controllers {
     public class ListDetailController : Controller
@@ -29,10 +31,17 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
 
             // Alle Tasks verknüpft mit dieser Liste holen
             List<TaskModel> tasks = new List<TaskModel>();
+            List<PriorityModel> priority = new List<PriorityModel>();
+            List<StatusModel> status = new List<StatusModel>();
             ListDetailViewModel listDetail = new ListDetailViewModel();
             tasks = _context.Task.Where(n => n.ListId == id).ToList();
+            priority = _context.Priority.ToList();
+            status = _context.Status.ToList();
             // Tasks für die Detail ansicht vorbereiten
             listDetail.Tasks = tasks;
+            listDetail.Priority = priority;
+            listDetail.Status = status;
+            listDetail.ListId = id;
             return View(listDetail);
         }
 
@@ -47,19 +56,19 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
         }
 
         [HttpPost]
-        public IActionResult Create(string name)
+        public IActionResult Create(int listId, string title, string description, int statusId, int priorityId)
         {
             IdentityUser user = _context.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
-            ListModel model = new ListModel();
-            model.Name = name;
-            ShareModel Share = new ShareModel();
-            _context.List.Add(model);
+            TaskModel model = new TaskModel();
+            model.Title = title;
+            model.Description = description;
+            model.UserId = user.Id;
+            model.ListId = listId;
+            model.StatusId = statusId;
+            model.PriorityId = priorityId;
+            _context.Task.Add(model);
             _context.SaveChanges();
-            Share.UserId = user.Id;
-            Share.ListId = model.Id;
-            _context.Share.Add(Share);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = listId });
         }
 
         public IActionResult Privacy()
