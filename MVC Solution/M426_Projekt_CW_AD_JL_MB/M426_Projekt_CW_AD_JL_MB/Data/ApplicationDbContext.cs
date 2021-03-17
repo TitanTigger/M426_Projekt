@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using M426_Projekt_Core.Models.List;
-using M426_Projekt_Core.Models.Priority;
-using M426_Projekt_Core.Models.Role;
-using M426_Projekt_Core.Models.Share;
-using M426_Projekt_Core.Models.Status;
-using M426_Projekt_Core.Models.Task;
-using M426_Projekt_Core.Models.User;
+using M426_Projekt_CW_AD_JL_MB.Models.List;
+using M426_Projekt_CW_AD_JL_MB.Models.Priority;
+using M426_Projekt_CW_AD_JL_MB.Models.Role;
+using M426_Projekt_CW_AD_JL_MB.Models.Share;
+using M426_Projekt_CW_AD_JL_MB.Models.Status;
+using M426_Projekt_CW_AD_JL_MB.Models.Task;
+using M426_Projekt_CW_AD_JL_MB.Models.User;
 
 namespace M426_Projekt_CW_AD_JL_MB.Data
 {

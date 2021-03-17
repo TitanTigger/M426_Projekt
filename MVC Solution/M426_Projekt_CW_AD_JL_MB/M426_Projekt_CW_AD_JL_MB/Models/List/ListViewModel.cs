@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using M426_Projekt_Core.Models.Share;
 
-namespace M426_Projekt_Core.Models.List
+namespace M426_Projekt_CW_AD_JL_MB.Models.List
 {
     public class ListViewModel
     {
-        // Um die Liste zu identifizieren
-        public int ID { get; set; }
-        // Listen-Name
-        public string Name { get; set; }
-        // Share
-        public ShareModel Share { get; set; }
+        public List<ListModel> Lists { get; set; }
     }
 }

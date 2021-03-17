@@ -2789,6 +2789,7 @@
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5033,6 +5034,7 @@
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6094,23 +6096,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\weissc14\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\lippj\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
+      "projectUniqueName": "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
       "projectName": "M426_Projekt_CW_AD_JL_MB",
-      "projectPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
-      "packagesPath": "C:\\Users\\weissc14\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\weissc14\\source\\repos\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\obj\\",
+      "projectPath": "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
+      "packagesPath": "C:\\Users\\lippj\\.nuget\\packages\\",
+      "outputPath": "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\weissc14\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lippj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6175,7 +6173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
