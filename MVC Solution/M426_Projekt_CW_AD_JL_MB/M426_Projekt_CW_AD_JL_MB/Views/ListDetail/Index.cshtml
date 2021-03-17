@@ -2,7 +2,11 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-sm" style=" background-color: lightgray; margin: 1em; padding: 1em; border-radius: 5px; box-shadow: 0.3em 0.3em lightgray;" ">
+            <div class="col-sm" style="        background-color: lightblue;
+        margin: 1em;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);" ">
                 <h1>ToDo</h1>
                 @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks)
                 {
@@ -13,6 +17,7 @@
                             </h5>
                         </div>
                     </div>
+                    <button>@Html.ActionLink("Delete", "Delete", "ListDetail", new { id = obj.Id }, null) <i class="far fa-trash-alt"></i></button>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -42,7 +47,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm" style="background-color:lightblue; margin: 1em; padding: 1em; border-radius: 5px; box-shadow: 0.3em 0.3em lightgray;" ">
+            <div class="col-sm" style="        background-color: rgb(216,191,216);
+        margin: 1em;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);" ">
                 <h1>Doing</h1>
                 @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks)
                 {
@@ -75,7 +84,11 @@
                     </div>
                 }
             </div>
-            <div class="col-sm" style=" background-color: lightgreen; margin: 1em; padding: 1em; border-radius: 5px; box-shadow: 0.3em 0.3em lightgray;">
+            <div class="col-sm" style="        background-color: lightgreen;
+        margin: 1em;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);">
                 <h1>Done</h1>
                 @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks)
                 {
