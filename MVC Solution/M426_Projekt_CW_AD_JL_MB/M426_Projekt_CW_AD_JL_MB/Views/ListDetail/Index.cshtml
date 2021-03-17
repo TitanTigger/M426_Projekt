@@ -18,7 +18,8 @@
                         </h5>
                     </div>
                 </div>
-                <button>@Html.ActionLink("Delete", "Delete", "ListDetail", new { id = obj.Id }, null) <i class="far fa-trash-alt"></i></button>
+                <button style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
+
                 <!-- Modal -->
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -16,8 +16,8 @@
         <h5 class="card-title">
             @obj.Name
         </h5>
-        <button>@Html.ActionLink("Delete", "Delete", "List", new { id = obj.Id }, null)</button>
-        <button>@Html.ActionLink("Detail", "Index", "ListDetail", new { id = obj.Id }, null)</button>
+        <button style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "List", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
+        <button style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Index", "ListDetail", new { id = obj.Id })'"><i class="fas fa-info-circle"></i></button>
     </div>
 </div>}
 </div>
