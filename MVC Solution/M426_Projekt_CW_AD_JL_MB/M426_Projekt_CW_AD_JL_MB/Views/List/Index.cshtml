@@ -17,6 +17,7 @@
             @obj.Name
         </h5>
         <button>@Html.ActionLink("Delete", "Delete", "List", new { id = obj.Id }, null)</button>
+        <button>@Html.ActionLink("Detail", "Index", "ListDetail", new { id = obj.Id }, null)</button>
     </div>
 </div>}
 </div>

@@ -12,6 +12,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Task
     public class TaskModel
     {
         public int Id { get; set; }
+        public int ListId { get; set; }
         public virtual StatusModel Status { get; set; }
         public virtual IdentityUser User { get; set; }
         public virtual PriorityModel Priority { get; set; }
