@@ -9,25 +9,48 @@ using System.Threading.Tasks;
 using M426_Projekt_CW_AD_JL_MB.Models.List;
 using M426_Projekt_CW_AD_JL_MB.Models.User;
 using M426_Projekt_CW_AD_JL_MB.Data;
+using Microsoft.AspNetCore.Identity;
+using M426_Projekt_CW_AD_JL_MB.Models.Share;
 
-namespace M426_Projekt_CW_AD_JL_MB.Controllers
-{
-    public class HomeController : Controller
+namespace M426_Projekt_CW_AD_JL_MB.Controllers {
+    public class ListController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
-
         private readonly ApplicationDbContext _context;
 
-        public HomeController(ApplicationDbContext context)
+        public ListController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         public IActionResult Index()
         {
-            //List<ListModel> test = _context.List.Where(u => u.name == "Sali").ToList();
+            List<ListModel> lists = new List<ListModel>();
+            ListViewModel listViewModel = new ListViewModel();
+           
+            List<ShareModel> Shares = _context.Share.Where(s => s.User.UserName == User.Identity.Name).ToList();
+
+            foreach(ShareModel Share in Shares)
+            {
+                lists.Add(_context.List.Where(l => l.Id == Share.ListId).FirstOrDefault());
+            }
+
+            listViewModel.Lists = lists;
+            return View(listViewModel);
+        }
+
+        public IActionResult Delete(int id)
+        {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(string name)
+        {
+            return View();
+        }
+
+
+
 
         public IActionResult Privacy()
         {

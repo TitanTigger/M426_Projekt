@@ -1,0 +1,11 @@
+﻿@using M426_Projekt_CW_AD_JL_MB.Models.Task
+<h1>My Lists</h1>
+<div class="List">
+    @foreach (TaskModel task in Model)
+    {
+        <div class="ListItem">
+            <p>@Html.DisplayFor(modelItem => task.Title)</p>
+        </div>
+    }
+</div>
+
