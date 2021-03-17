@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj": {}
+    "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj": {}
   },
   "projects": {
-    "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj": {
+    "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
+        "projectUniqueName": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
         "projectName": "M426_Projekt_CW_AD_JL_MB",
-        "projectPath": "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
-        "packagesPath": "C:\\Users\\lippj\\.nuget\\packages\\",
-        "outputPath": "C:\\GIBZ\\M426\\TEMP\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\obj\\",
+        "projectPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB.csproj",
+        "packagesPath": "C:\\Users\\maxbr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M426\\Git\\M426_Projekt\\MVC Solution\\M426_Projekt_CW_AD_JL_MB\\M426_Projekt_CW_AD_JL_MB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lippj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maxbr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -46,10 +46,18 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
         [HttpPost]
         public IActionResult Create(string name)
         {
-            return View();
+            IdentityUser user = _context.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+            ListModel model = new ListModel();
+            model.Name = name;
+            ShareModel Share = new ShareModel();
+            _context.List.Add(model);
+            _context.SaveChanges();
+            Share.UserId = user.Id;
+            Share.ListId = model.Id;
+            _context.Share.Add(Share);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
-
-
 
 
         public IActionResult Privacy()
