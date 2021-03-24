@@ -1,0 +1,52 @@
+﻿<Properties StartupConfiguration="{C5119577-B14A-4721-9884-31318F98A9C7}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="M426_Projekt_CW_AD_JL_MB/Views/ListDetail/Index.cshtml">
+    <Files>
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Controllers/ListController.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Controllers/ListDetailController.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/List/ListDetailViewModel.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/List/ListModel.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/List/ListViewModel.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/Priority/PriorityModel.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/Role/RoleModel.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/Share/ShareModel.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/Status/StatusModel.cs" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/User/UserModel.cs" Line="10" Column="31" />
+      <File FileName="M426_Projekt_CW_AD_JL_MB/Views/ListDetail/Index.cshtml" Line="97" Column="94" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="M426_Projekt_CW_AD_JL_MB" expanded="True">
+            <Node name="M426_Projekt_CW_AD_JL_MB" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="List" expanded="True" />
+                <Node name="Priority" expanded="True" />
+                <Node name="Role" expanded="True" />
+                <Node name="Share" expanded="True" />
+                <Node name="Status" expanded="True" />
+                <Node name="Task" expanded="True" />
+                <Node name="User" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="List" expanded="True" />
+                <Node name="ListDetail" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.M426__Projekt__CW__AD__JL__MB PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
