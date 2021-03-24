@@ -8,7 +8,6 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.List
 {
     public class ListModel
     {
-        // Entitäts-Klasse für Datenbankverbindung
         public int Id { get; set; }
         public string Name { get; set; }
     }

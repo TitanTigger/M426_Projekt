@@ -11,7 +11,6 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Task
 {
     public class TaskModel
     {
-        // Klassen-Entität für Aufgaben in Listen
         public int Id { get; set; }
         public int ListId { get; set; }
         public int StatusId { get; set; }
@@ -22,48 +21,5 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Task
         public virtual PriorityModel Priority { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-
-        // Status-Id von Aufgaben verändern / Überprüfung ob möglich
-        public int ChangeStatus(int id, bool back, int statusId)
-        {
-
-            if (statusId == 1)
-            {
-                if (back)
-                {
-                    return 0;
-                }
-                else
-                {
-                    statusId += 1;
-                }
-                // Man kann kein 'Back'
-            }
-            else if (statusId == 3)
-            {
-                if (!back)
-                {
-                    return 0;
-                }
-                else
-                {
-                    statusId -= 1;
-                }
-                // Man kann nicht 'Weiter'
-            }
-            else
-            {
-                if (back)
-                {
-                    statusId -= 1;
-                }
-                else
-                {
-                    statusId += 1;
-                }
-                //Status in jede Richtung
-            }
-            return statusId;
-        }
     }
 }

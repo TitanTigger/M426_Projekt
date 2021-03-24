@@ -7,7 +7,6 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Priority
 {
     public class PriorityModel
     {
-        // Priorität der Aufgaben
         public int Id { get; set; }
         public string name { get; set; }
         public int emphasis { get; set; }

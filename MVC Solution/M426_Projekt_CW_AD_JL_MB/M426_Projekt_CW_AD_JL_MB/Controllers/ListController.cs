@@ -11,7 +11,6 @@ using M426_Projekt_CW_AD_JL_MB.Models.User;
 using M426_Projekt_CW_AD_JL_MB.Data;
 using Microsoft.AspNetCore.Identity;
 using M426_Projekt_CW_AD_JL_MB.Models.Share;
-using Microsoft.AspNetCore.Authorization;
 
 namespace M426_Projekt_CW_AD_JL_MB.Controllers {
     public class ListController : Controller
@@ -23,10 +22,8 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             _context = context;
         }
 
-        [Authorize]
         public IActionResult Index()
         {
-            // Alle listen anzeigen (Mit Berechtigung)
             List<ListModel> lists = new List<ListModel>();
             ListViewModel listViewModel = new ListViewModel();
            
@@ -34,7 +31,6 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
 
             foreach(ShareModel Share in Shares)
             {
-                // Listen mit Berechtigung
                 lists.Add(_context.List.Where(l => l.Id == Share.ListId).FirstOrDefault());
             }
 
@@ -42,16 +38,13 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             return View(listViewModel);
         }
 
-        [Authorize]
         public IActionResult Delete(int id)
         {
-            // Selektierten Task löschen
             _context.Share.RemoveRange(_context.Share.Where(s => s.ListId == id));
             _context.Task.RemoveRange(_context.Task.Where(t => t.ListId == id));
             _context.SaveChanges();
             ListModel list = _context.List.Find(id);
             _context.List.Remove(list);
-            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -59,7 +52,6 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
         [HttpPost]
         public IActionResult Create(string name)
         {
-            // Task mit Parameter-Werte erstellen
             IdentityUser user = _context.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
             ListModel model = new ListModel();
             model.Name = name;
@@ -69,12 +61,11 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             Share.UserId = user.Id;
             Share.ListId = model.Id;
             _context.Share.Add(Share);
-            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        [Authorize]
+
         public IActionResult Privacy()
         {
             return View();

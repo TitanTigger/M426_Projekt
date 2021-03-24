@@ -14,7 +14,6 @@ using M426_Projekt_CW_AD_JL_MB.Models.Share;
 using M426_Projekt_CW_AD_JL_MB.Models.Task;
 using M426_Projekt_CW_AD_JL_MB.Models.Status;
 using M426_Projekt_CW_AD_JL_MB.Models.Priority;
-using Microsoft.AspNetCore.Authorization;
 
 namespace M426_Projekt_CW_AD_JL_MB.Controllers {
     public class ListDetailController : Controller
@@ -26,17 +25,11 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             _context = context;
         }
 
-        [Authorize]
         public IActionResult Index(int id)
         {
-            // Selektierte Liste in ListDetail öffnen
-            // Alle Aufgaben mit der List-ID holen
             ListDetailViewModel listDetail = new ListDetailViewModel();
-
-            // Benutzer lesen
-            List<IdentityUser> users = _context.Users.ToList();
+            List<IdentityUser> users = _context.Users.Where(n => n.Id != null).ToList();
             listDetail.Users = users;
-            // Alle Tasks in Liste schreiben
             List<TaskModel> tasks = new List<TaskModel>();
             foreach (TaskModel task in tasks)
             {
@@ -44,70 +37,83 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             }
             listDetail.Tasks = tasks;
 
-            // List Priority lesen
+            // User überprüfen nach Berechtigung in der Share Tabelle
+
+            // Alle Tasks verknüpft mit dieser Liste holen
+            
             List<PriorityModel> priority = new List<PriorityModel>();
             List<StatusModel> status = new List<StatusModel>();
-
-            // Tasks auf DB lesen
+            
             tasks = _context.Task.Where(n => n.ListId == id).ToList();
+            //foreach(TaskModel taskObj in tasks)
+            //{
+            //    taskObj.Id_String = taskObj.Id.ToString();
+            //}
             priority = _context.Priority.ToList();
-            // Alle Status lesen
             status = _context.Status.ToList();
-            // Property abfüllen
+            // Tasks für die Detail ansicht vorbereiten
             listDetail.Tasks = tasks;
             listDetail.Priority = priority;
             listDetail.Status = status;
             listDetail.ListId = id;
-
-            // View aufrufen mit Parameter
             return View(listDetail);
         }
 
-        [Authorize]
         [HttpPost]
         public IActionResult UpdateTask(int id, string userId)
         {
-            // Veränderungen der Tasks speichern
             TaskModel task = _context.Task.Where(n => n.Id == id).First();
             IdentityUser user = _context.Users.Where(n => n.Id == userId).First();
             task.User = user;
             _context.Task.Update(task);
-            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             return RedirectToAction("Index", new { id = task.ListId });
         }
 
-        [Authorize]
         public IActionResult ChangeStatus(int id, bool back)
         {
-            // Status des Tasks verändern
             TaskModel task = _context.Task.Find(id);
-            task.StatusId = task.ChangeStatus(id, back, task.StatusId);
-
+            if(task.StatusId == 1) {
+                if(back) {
+                    return RedirectToAction("Index", new { id = task.ListId });
+                } else {
+                    task.StatusId += 1;
+                }
+                // Man kann kein 'Back'
+            } else if (task.StatusId == 3)
+            {
+                if(!back) {
+                    return RedirectToAction("Index", new { id = task.ListId });
+                } else {
+                    task.StatusId -= 1;
+                }
+                // Man kann nicht 'Weiter'
+            } else {
+                if(back) {
+                    task.StatusId -= 1;
+                } else {
+                    task.StatusId += 1;
+                }
+                //Status in jede Richtung
+            }
             _context.Task.Update(task);
-            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             return RedirectToAction("Index", new { id = task.ListId });
         }
 
-        [Authorize]
         public IActionResult Delete(int id)
         {
             //_context.Task.RemoveRange(_context.Task.Where(t => t. == id));
             //_context.SaveChanges();
             TaskModel task = _context.Task.Find(id);
             _context.Task.Remove(task);
-            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
-            // Zurück zu ListDetail
             return RedirectToAction("Index", new { id = task.ListId });
         }
 
-        [Authorize]
         [HttpPost]
         public IActionResult Create(int listId, string title, string description, int statusId, int priorityId)
         {
-            // Task erstellen
             IdentityUser user = _context.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
             TaskModel model = new TaskModel();
             model.Title = title;
@@ -117,17 +123,13 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             model.StatusId = statusId;
             model.PriorityId = priorityId;
             _context.Task.Add(model);
-            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
-            // Zurück zu ListDetail
             return RedirectToAction("Index", new { id = listId });
         }
 
-        [Authorize]
         [HttpPost]
         public IActionResult Share(int id, string username)
         {
-            // Liste mit einem User Teilen
             ShareModel Share = new ShareModel();
             IdentityUser shareUser = new IdentityUser();
             shareUser = _context.Users.Where(u => u.UserName == username).FirstOrDefault();
@@ -138,10 +140,11 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
                     Share.UserId = shareUser.Id;
                     Share.ListId = id;
                     _context.Share.Add(Share);
-                    // Änderungen in Datenbank schreiben
                     _context.SaveChanges();
                 }
             }
+
+
             return RedirectToAction("Index");
         }
 
