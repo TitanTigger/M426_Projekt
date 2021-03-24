@@ -7,6 +7,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.List
 {
     public class ListViewModel
     {
+        // ViewModel für Listen
         public List<ListModel> Lists { get; set; }
     }
 }

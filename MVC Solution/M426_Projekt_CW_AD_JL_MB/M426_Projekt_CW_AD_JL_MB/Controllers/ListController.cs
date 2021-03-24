@@ -24,6 +24,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
 
         public IActionResult Index()
         {
+            // Alle Listen Darstellen (zugewiesene)
             List<ListModel> lists = new List<ListModel>();
             ListViewModel listViewModel = new ListViewModel();
            
@@ -31,6 +32,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
 
             foreach(ShareModel Share in Shares)
             {
+                // Berechtigungen überprüfen
                 lists.Add(_context.List.Where(l => l.Id == Share.ListId).FirstOrDefault());
             }
 
@@ -40,11 +42,13 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
 
         public IActionResult Delete(int id)
         {
+            // Liste löschen
             _context.Share.RemoveRange(_context.Share.Where(s => s.ListId == id));
             _context.Task.RemoveRange(_context.Task.Where(t => t.ListId == id));
             _context.SaveChanges();
             ListModel list = _context.List.Find(id);
             _context.List.Remove(list);
+            // Änderungen in Datenbank speichern
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -52,6 +56,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
         [HttpPost]
         public IActionResult Create(string name)
         {
+            // Liste rstellen
             IdentityUser user = _context.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
             ListModel model = new ListModel();
             model.Name = name;
@@ -61,6 +66,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             Share.UserId = user.Id;
             Share.ListId = model.Id;
             _context.Share.Add(Share);
+            // Änderungen in Datenbank speichern
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -14,151 +14,161 @@
             </div>
             @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks.Where(n => n.StatusId == 1))
             {
-        <div class="card m-1">
-            <div class="card-body" data-toggle="modal" data-target="#@obj.Title">
-                <h5 class="card-title">
-                    @obj.Title
-                </h5>
+                <div class="card m-1">
+                    <div class="card-body" data-toggle="modal" data-target="#@obj.Title">
+                        <h5 class="card-title">
+                            @obj.Title
+                        </h5>
 
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'"><i class="fas fa-arrow-left"></i></button>
-                <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'"><i class="fas fa-arrow-right"></i></button>
-                <button class="delete" style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
-            </div>
-        </div> 
-        <!-- Modal --> <!-- Modal -->
-                        <div class="modal fade" id="@obj.Title" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">@obj.Title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        @obj.Description
-                                    </div>
-                                    <p class="userDetails">
-                                        @obj.User.UserName
-                                        @using (Html.BeginForm("UpdateTask", "ListDetail", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                        {
-                        <select name="userId" class="userDetails">
-                            @foreach (Microsoft.AspNetCore.Identity.IdentityUser user in Model.Users)
-                            {
-                                <option value="@user.Id">@user.UserName</option>
-                            }
-                            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel task in Model.Tasks)
-                            {
-                                if (task.Id == obj.Id)
-                                {
-                                    <input name="id" value="@task.Id" hidden />                        
-                                }
-                            }
-                        </select> <div class="modal-footer">
-                            <input type="submit" class="btn btn-primary" value="Update" />
-                        </div>                }
-                                </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'"><i class="fas fa-arrow-left"></i></button>
+                        <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'"><i class="fas fa-arrow-right"></i></button>
+                        <button class="delete" style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </div>
+                <!-- Modal --> <!-- Modal -->
+                <div class="modal fade" id="@obj.Title" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">@obj.Title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                        </div>}
+                            <div class="modal-body">
+                                @obj.Description
+                            </div>
+                            <p class="userDetails">
+                                @obj.User.UserName
+                                @using (Html.BeginForm("UpdateTask", "ListDetail", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                    <select name="userId" class="userDetails">
+                                        @foreach (Microsoft.AspNetCore.Identity.IdentityUser user in Model.Users)
+                                        {
+                                            <option value="@user.Id">@user.UserName</option>
+                                        }
+                                        @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel task in Model.Tasks)
+                                        {
+                                            if (task.Id == obj.Id)
+                                            {
+                                                <input name="id" value="@task.Id" hidden />
+
+                                            }
+                                        }
+                                    </select> <div class="modal-footer">
+                                        <input type="submit" class="btn btn-primary" value="Update" />
+                                    </div>}
+                        </div>
+                    </div>
+                </div>}
             <!-- New Colomn -->
         </div>
         <div class="col-sm todoItems" id="Doing">
             <h1>Doing</h1>
             @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks.Where(n => n.StatusId == 2))
             {
-            <div class="card m-1">
-                <div class="card-body" data-toggle="modal" data-target="#@obj.Title">
-                    <h5 class="card-title">
-                        @obj.Title
-                    </h5>
+                <div class="card m-1">
+                    <div class="card-body" data-toggle="modal" data-target="#@obj.Title">
+                        <h5 class="card-title">
+                            @obj.Title
+                        </h5>
 
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'"><i class="fas fa-arrow-left"></i></button>
-                    <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'"><i class="fas fa-arrow-right"></i></button>
-                    <button class="delete" style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
-                </div>
-            </div> <!-- Modal -->
-                            <div class="modal fade" id="@obj.Title" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Task details</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            @obj.Description
-                                        </div>
-                                        <div class="modal-body">
-                                            @obj.Priority
-                                        </div>
-                                        <p class="userDetails">
-                                            @obj.User.UserName
-                                            @using (Html.BeginForm("UpdateTask", "ListDetail", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                            {
-                            <select name="userId" class="userDetails">
-                                @foreach (Microsoft.AspNetCore.Identity.IdentityUser user in Model.Users)
-                                {
-            <option value="@user.Id">@user.UserName</option>
-            }
-                                @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel task in Model.Tasks)
-                                {
-                                    if (task.Id == obj.Id)
-                                    {
-            <input name="id" value="@task.Id" hidden />
-            }
-            }
-                            </select> <div class="modal-footer">
-                                <input type="submit" class="btn btn-primary" value="Update" />
-                            </div>}
-                                    </div>
-                                </div>
-                            </div>
-                }
-        </div>
-        <div class="col-sm todoItems" id="Done">
-            <h1>Done</h1>
-            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks.Where(n => n.StatusId == 3))
-            {
-<div class="card m-1">
-    <div class="card-body" data-toggle="modal" data-target="#@obj.Title">
-        <h5 class="card-title">
-            @obj.Title
-        </h5>
-
-    </div>
-    <div class="card-footer">
-        <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'"><i class="fas fa-arrow-left"></i></button>
-        <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'"><i class="fas fa-arrow-right"></i></button>
-        <button class="delete" style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
-    </div>
-</div>
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'"><i class="fas fa-arrow-left"></i></button>
+                        <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'"><i class="fas fa-arrow-right"></i></button>
+                        <button class="delete" style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </div> <!-- Modal -->
+                <div class="modal fade" id="@obj.Title" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="@obj.Title">Create new list</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Task details</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="container">
-                                    @using (Html.BeginForm("Create", "List", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                    {
-                    <div class="form-group">
-                        <div>
-                            Name: <input class="span2 col-md-2 form-control" id="format" name="name" type="text" required>
-                            <br />
-                            <input type="submit" value="Update" class="btn btn-default" />
-                        </div>
-                    </div>}
-                                </div>
+                                @obj.Description
                             </div>
+                            <p class="userDetails">
+                                @obj.User.UserName
+                                @using (Html.BeginForm("UpdateTask", "ListDetail", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                    <select name="userId" class="userDetails">
+                                        @foreach (Microsoft.AspNetCore.Identity.IdentityUser user in Model.Users)
+                                        {
+                                            <option value="@user.Id">@user.UserName</option>
+                                        }
+                                        @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel task in Model.Tasks)
+                                        {
+                                            if (task.Id == obj.Id)
+                                            {
+                                                <input name="id" value="@task.Id" hidden />
+                                            }
+                                        }
+                                        </select> <div class="modal-footer">
+                                            <input type="submit" class="btn btn-primary" value="Update" />
+                                        </div>
+                                    }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- New Colomn -->
+        <div class="col-sm todoItems" id="Done">
+            <h1>Done</h1>
+            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks.Where(n => n.StatusId == 3))
+            {
+                <div class="card m-1">
+                    <div class="card-body" data-toggle="modal" data-target="#@obj.Title">
+                        <h5 class="card-title">
+                            @obj.Title
+                        </h5>
+
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'"><i class="fas fa-arrow-left"></i></button>
+                        <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'"><i class="fas fa-arrow-right"></i></button>
+                        <button class="delete" style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </div>
+                <div class="modal fade" id="@obj.Title" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Task details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                @obj.Description
+                            </div>
+                            <p class="userDetails">
+                                @obj.User.UserName
+                                @using (Html.BeginForm("UpdateTask", "ListDetail", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                    <select name="userId" class="userDetails">
+                                        @foreach (Microsoft.AspNetCore.Identity.IdentityUser user in Model.Users)
+                                        {
+                                            <option value="@user.Id">@user.UserName</option>
+                                        }
+                                        @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel task in Model.Tasks)
+                                        {
+                                            if (task.Id == obj.Id)
+                                            {
+                                                <input name="id" value="@task.Id" hidden />
+                                            }
+                                        }
+                                    </select> <div class="modal-footer">
+                                        <input type="submit" class="btn btn-primary" value="Update" />
+                                    </div>
+                                }
                         </div>
                     </div>
                 </div>}
@@ -216,8 +226,8 @@
                     <select class="form-control" name="statusId">
                         @foreach (M426_Projekt_CW_AD_JL_MB.Models.Status.StatusModel obj in Model.Status)
                         {
-        <option value="@obj.Id">@obj.name</option>
-}
+                            <option value="@obj.Id">@obj.name</option>
+                        }
                     </select>
                 </div>
                 <br />

@@ -27,6 +27,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
 
         public IActionResult Index(int id)
         {
+            // Alle Tasks in verknüpfung mit dieser Aufgabe
             ListDetailViewModel listDetail = new ListDetailViewModel();
             List<IdentityUser> users = _context.Users.Where(n => n.Id != null).ToList();
             listDetail.Users = users;
@@ -38,17 +39,11 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             listDetail.Tasks = tasks;
 
             // User überprüfen nach Berechtigung in der Share Tabelle
-
             // Alle Tasks verknüpft mit dieser Liste holen
-            
             List<PriorityModel> priority = new List<PriorityModel>();
             List<StatusModel> status = new List<StatusModel>();
             
             tasks = _context.Task.Where(n => n.ListId == id).ToList();
-            //foreach(TaskModel taskObj in tasks)
-            //{
-            //    taskObj.Id_String = taskObj.Id.ToString();
-            //}
             priority = _context.Priority.ToList();
             status = _context.Status.ToList();
             // Tasks für die Detail ansicht vorbereiten
@@ -56,48 +51,31 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             listDetail.Priority = priority;
             listDetail.Status = status;
             listDetail.ListId = id;
+            // View mit Instanz als Parameter aufrufen
             return View(listDetail);
         }
 
         [HttpPost]
         public IActionResult UpdateTask(int id, string userId)
         {
+            // Änderungen am Task speichern
             TaskModel task = _context.Task.Where(n => n.Id == id).First();
             IdentityUser user = _context.Users.Where(n => n.Id == userId).First();
             task.User = user;
             _context.Task.Update(task);
+            // Änderungen in Datenbank speichern
             _context.SaveChanges();
+            // Zurück zu Listen-View
             return RedirectToAction("Index", new { id = task.ListId });
         }
 
         public IActionResult ChangeStatus(int id, bool back)
         {
             TaskModel task = _context.Task.Find(id);
-            if(task.StatusId == 1) {
-                if(back) {
-                    return RedirectToAction("Index", new { id = task.ListId });
-                } else {
-                    task.StatusId += 1;
-                }
-                // Man kann kein 'Back'
-            } else if (task.StatusId == 3)
-            {
-                if(!back) {
-                    return RedirectToAction("Index", new { id = task.ListId });
-                } else {
-                    task.StatusId -= 1;
-                }
-                // Man kann nicht 'Weiter'
-            } else {
-                if(back) {
-                    task.StatusId -= 1;
-                } else {
-                    task.StatusId += 1;
-                }
-                //Status in jede Richtung
-            }
+            task.StatusId = task.StatusId = task.ChangeStatus(id, back, task.StatusId);
             _context.Task.Update(task);
             _context.SaveChanges();
+            // Zurück zu Listen-View
             return RedirectToAction("Index", new { id = task.ListId });
         }
 
@@ -108,14 +86,17 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             TaskModel task = _context.Task.Find(id);
             _context.Task.Remove(task);
             _context.SaveChanges();
+            // Zurück zu Listen-View
             return RedirectToAction("Index", new { id = task.ListId });
         }
 
         [HttpPost]
         public IActionResult Create(int listId, string title, string description, int statusId, int priorityId)
         {
+            // Task mit Parameter (eingabe im modal) erstellen und speicher in DB
             IdentityUser user = _context.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
             TaskModel model = new TaskModel();
+            // Alle Werte zu der Instanz setzen
             model.Title = title;
             model.Description = description;
             model.UserId = user.Id;
@@ -123,7 +104,9 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             model.StatusId = statusId;
             model.PriorityId = priorityId;
             _context.Task.Add(model);
+            // Task in Datenbank speichern
             _context.SaveChanges();
+            // Zurück zu Listen-View
             return RedirectToAction("Index", new { id = listId });
         }
 
