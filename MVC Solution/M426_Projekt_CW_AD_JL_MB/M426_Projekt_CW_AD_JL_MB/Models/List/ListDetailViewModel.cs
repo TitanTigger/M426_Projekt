@@ -11,6 +11,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.List
 {
     public class ListDetailViewModel
     {
+        // ViewModel für Detail View
         public int ListId { get; set; }
         public List<TaskModel> Tasks { get; set; }
         public List<StatusModel> Status { get; set; }
