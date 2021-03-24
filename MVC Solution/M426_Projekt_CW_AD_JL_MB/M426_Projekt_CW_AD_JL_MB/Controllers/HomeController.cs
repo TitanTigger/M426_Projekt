@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using M426_Projekt_CW_AD_JL_MB.Models.List;
 using M426_Projekt_CW_AD_JL_MB.Models.User;
 using M426_Projekt_CW_AD_JL_MB.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace M426_Projekt_CW_AD_JL_MB.Controllers
 {
@@ -23,12 +24,14 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers
             _context = context;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             //List<ListModel> test = _context.List.Where(u => u.name == "Sali").ToList();
             return View();
         }
 
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();

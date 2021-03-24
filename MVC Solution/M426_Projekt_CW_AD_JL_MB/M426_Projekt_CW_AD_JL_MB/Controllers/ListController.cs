@@ -11,6 +11,7 @@ using M426_Projekt_CW_AD_JL_MB.Models.User;
 using M426_Projekt_CW_AD_JL_MB.Data;
 using Microsoft.AspNetCore.Identity;
 using M426_Projekt_CW_AD_JL_MB.Models.Share;
+using Microsoft.AspNetCore.Authorization;
 
 namespace M426_Projekt_CW_AD_JL_MB.Controllers {
     public class ListController : Controller
@@ -22,6 +23,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             _context = context;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             List<ListModel> lists = new List<ListModel>();
@@ -38,6 +40,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             return View(listViewModel);
         }
 
+        [Authorize]
         public IActionResult Delete(int id)
         {
             _context.Share.RemoveRange(_context.Share.Where(s => s.ListId == id));
@@ -65,7 +68,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             return RedirectToAction("Index");
         }
 
-
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();

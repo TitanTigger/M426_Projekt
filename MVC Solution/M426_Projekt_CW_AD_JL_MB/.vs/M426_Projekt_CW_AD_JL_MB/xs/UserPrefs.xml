@@ -1,25 +1,13 @@
 ﻿<Properties StartupConfiguration="{C5119577-B14A-4721-9884-31318F98A9C7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="M426_Projekt_CW_AD_JL_MB/Program.cs">
-    <Files>
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Data/ApplicationDbContext.cs" Line="1" Column="1" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Controllers/HomeController.cs" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Controllers/ListController.cs" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Views/List/Index.cshtml" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/List/ListViewModel.cs" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/List/ListModel.cs" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/Task/TaskModel.cs" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Views/List/ListDetails.cshtml" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Views/ListDetail/Index.cshtml" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Controllers/ListDetailController.cs" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Models/List/ListDetailViewModel.cs" />
-      <File FileName="M426_Projekt_CW_AD_JL_MB/Program.cs" Line="16" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="M426_Projekt_CW_AD_JL_MB" expanded="True">
             <Node name="M426_Projekt_CW_AD_JL_MB" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ListDetailController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="List" expanded="True" />
@@ -34,7 +22,6 @@
                 <Node name="List" expanded="True" />
                 <Node name="ListDetail" expanded="True" />
               </Node>
-              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

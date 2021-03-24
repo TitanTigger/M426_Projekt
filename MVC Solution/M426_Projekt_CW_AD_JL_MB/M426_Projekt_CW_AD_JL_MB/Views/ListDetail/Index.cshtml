@@ -9,13 +9,15 @@
         border-radius: 5px;
         box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);" ">
             <h1>ToDo</h1>
-            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks)
+            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks.Where(n => n.StatusId == 1))
             {
                 <div data-toggle="modal" data-target="#exampleModalCenter" class="card m-1">
                     <div class="card-body">
                         <h5 class="card-title">
                             @obj.Title
                         </h5>
+                        <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'">Back</button>
+                        <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'">Go on</button>
                     </div>
                 </div>
                 <button style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "ListDetail", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
@@ -72,13 +74,15 @@
         border-radius: 5px;
         box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);" ">
             <h1>Doing</h1>
-            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks)
+            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks.Where(n => n.StatusId == 2))
             {
                 <div data-toggle="modal" data-target="#exampleModalCenter" class="card m-1">
                     <div class="card-body">
                         <h5 class="card-title">
                             @obj.Title
                         </h5>
+                        <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'">Back</button>
+                        <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'">Go on</button>
                     </div>
                 </div>
                 <!-- Modal -->
@@ -128,13 +132,15 @@
         border-radius: 5px;
         box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);">
             <h1>Done</h1>
-            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks)
+            @foreach (M426_Projekt_CW_AD_JL_MB.Models.Task.TaskModel obj in Model.Tasks.Where(n => n.StatusId == 3))
             {
                 <div data-toggle="modal" data-target="#exampleModalCenter" class="card m-1">
                     <div class="card-body">
                         <h5 class="card-title">
                             @obj.Title
                         </h5>
+                        <button class="btn btn-danger" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = true})'">Back</button>
+                        <button class="btn btn-success" style="border:none;" onclick="location.href='@Url.Action("ChangeStatus", "ListDetail", new { id = obj.Id, back = false})'">Go on</button>
                     </div>
                 </div>
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

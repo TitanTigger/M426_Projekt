@@ -14,6 +14,7 @@ using M426_Projekt_CW_AD_JL_MB.Models.Share;
 using M426_Projekt_CW_AD_JL_MB.Models.Task;
 using M426_Projekt_CW_AD_JL_MB.Models.Status;
 using M426_Projekt_CW_AD_JL_MB.Models.Priority;
+using Microsoft.AspNetCore.Authorization;
 
 namespace M426_Projekt_CW_AD_JL_MB.Controllers {
     public class ListDetailController : Controller
@@ -25,11 +26,17 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             _context = context;
         }
 
-        public IActionResult Index(int id = 1)
+        [Authorize]
+        public IActionResult Index(int id)
         {
+            // Selektierte Liste in ListDetail öffnen
+            // Alle Aufgaben mit der List-ID holen
             ListDetailViewModel listDetail = new ListDetailViewModel();
-            List<IdentityUser> users = _context.Users.Where(n => n.Id != null).ToList();
+
+            // Benutzer lesen
+            List<IdentityUser> users = _context.Users.ToList();
             listDetail.Users = users;
+            // Alle Tasks in Liste schreiben
             List<TaskModel> tasks = new List<TaskModel>();
             foreach (TaskModel task in tasks)
             {
@@ -37,35 +44,51 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             }
             listDetail.Tasks = tasks;
 
-            // User überprüfen nach Berechtigung in der Share Tabelle
-
-            // Alle Tasks verknüpft mit dieser Liste holen
-            
+            // List Priority lesen
             List<PriorityModel> priority = new List<PriorityModel>();
             List<StatusModel> status = new List<StatusModel>();
-            
+
+            // Tasks auf DB lesen
             tasks = _context.Task.Where(n => n.ListId == id).ToList();
             priority = _context.Priority.ToList();
+            // Alle Status lesen
             status = _context.Status.ToList();
-            // Tasks für die Detail ansicht vorbereiten
+            // Property abfüllen
             listDetail.Tasks = tasks;
             listDetail.Priority = priority;
             listDetail.Status = status;
             listDetail.ListId = id;
+
+            // View aufrufen mit Parameter
             return View(listDetail);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult UpdateTask(int id, string userId)
         {
+            // Veränderungen der Tasks speichern
             TaskModel task = _context.Task.Where(n => n.Id == id).First();
             IdentityUser user = _context.Users.Where(n => n.Id == userId).First();
             task.User = user;
             _context.Task.Update(task);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = task.ListId });
         }
 
+        [Authorize]
+        public IActionResult ChangeStatus(int id, bool back)
+        {
+            // Status des Tasks verändern
+            TaskModel task = _context.Task.Find(id);
+            task.StatusId = task.ChangeStatus(id, back, task.StatusId);
+
+            _context.Task.Update(task);
+            _context.SaveChanges();
+            return RedirectToAction("Index", new { id = task.ListId });
+        }
+
+        [Authorize]
         public IActionResult Delete(int id)
         {
             //_context.Task.RemoveRange(_context.Task.Where(t => t. == id));
@@ -73,12 +96,15 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             TaskModel task = _context.Task.Find(id);
             _context.Task.Remove(task);
             _context.SaveChanges();
+            // Zurück zu ListDetail
             return RedirectToAction("Index", new { id = task.ListId });
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Create(int listId, string title, string description, int statusId, int priorityId)
         {
+            // Task erstellen
             IdentityUser user = _context.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
             TaskModel model = new TaskModel();
             model.Title = title;
@@ -89,12 +115,15 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             model.PriorityId = priorityId;
             _context.Task.Add(model);
             _context.SaveChanges();
+            // Zurück zu ListDetail
             return RedirectToAction("Index", new { id = listId });
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Share(int id, string username)
         {
+            // Liste mit einem User Teilen
             ShareModel Share = new ShareModel();
             IdentityUser shareUser = new IdentityUser();
             shareUser = _context.Users.Where(u => u.UserName == username).FirstOrDefault();
@@ -108,8 +137,6 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
                     _context.SaveChanges();
                 }
             }
-
-
             return RedirectToAction("Index");
         }
 
