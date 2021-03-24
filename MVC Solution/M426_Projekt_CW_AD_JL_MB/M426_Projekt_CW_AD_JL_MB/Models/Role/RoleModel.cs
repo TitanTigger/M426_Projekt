@@ -7,6 +7,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Role
 {
     public class RoleModel
     {
+        // Berechtigung auf Aufgaben / Listen
         public int Id { get; set; }
         public string name { get; set; }
     }

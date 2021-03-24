@@ -72,6 +72,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             IdentityUser user = _context.Users.Where(n => n.Id == userId).First();
             task.User = user;
             _context.Task.Update(task);
+            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             return RedirectToAction("Index", new { id = task.ListId });
         }
@@ -84,6 +85,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             task.StatusId = task.ChangeStatus(id, back, task.StatusId);
 
             _context.Task.Update(task);
+            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             return RedirectToAction("Index", new { id = task.ListId });
         }
@@ -95,6 +97,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             //_context.SaveChanges();
             TaskModel task = _context.Task.Find(id);
             _context.Task.Remove(task);
+            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             // Zurück zu ListDetail
             return RedirectToAction("Index", new { id = task.ListId });
@@ -114,6 +117,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
             model.StatusId = statusId;
             model.PriorityId = priorityId;
             _context.Task.Add(model);
+            // Änderungen in Datenbank schreiben
             _context.SaveChanges();
             // Zurück zu ListDetail
             return RedirectToAction("Index", new { id = listId });
@@ -134,6 +138,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Controllers {
                     Share.UserId = shareUser.Id;
                     Share.ListId = id;
                     _context.Share.Add(Share);
+                    // Änderungen in Datenbank schreiben
                     _context.SaveChanges();
                 }
             }

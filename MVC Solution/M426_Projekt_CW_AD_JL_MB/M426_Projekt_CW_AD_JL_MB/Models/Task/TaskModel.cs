@@ -11,6 +11,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Task
 {
     public class TaskModel
     {
+        // Klassen-Entität für Aufgaben in Listen
         public int Id { get; set; }
         public int ListId { get; set; }
         public int StatusId { get; set; }
@@ -22,6 +23,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Task
         public string Title { get; set; }
         public string Description { get; set; }
 
+        // Status-Id von Aufgaben verändern / Überprüfung ob möglich
         public int ChangeStatus(int id, bool back, int statusId)
         {
 

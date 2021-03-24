@@ -7,6 +7,7 @@ namespace M426_Projekt_CW_AD_JL_MB.Models.Status
 {
     public class StatusModel
     {
+        // Klassen-Entität für Status einer Aufgabe
         public int Id { get; set; }
         public string name { get; set; }
     }
